@@ -12,7 +12,7 @@ jQuery(document).ready(function ($) {
       return $("<div></div>",{
         text: $(this).find('.title').text(),
         class:"draggable-title",
-      })
+      });
     },
     revert: false
   });
@@ -23,10 +23,10 @@ jQuery(document).ready(function ($) {
     drop: function(event, ui) {
 
     	var title = ui.draggable.clone().find('.title').text();
-    	var videoId = ui.draggable.clone().find('.title-and-thumbnail').data().video_id
+    	var videoId = ui.draggable.clone().find('.title-and-thumbnail').data().video_id;
 
     	var newQueueItem = '<article class="queue-item" data-id="' + videoId + '">' + '<div class="queue-item-title">' + title + '</div><div class="queue-item-icons"><img class="star-icon" src="/images/star.png"><img class="delete-from-queue" src="/images/cross.png"></div></article>'
-      $('#queue').append(newQueueItem)
+      $('#queue').append(newQueueItem);
 
 
     	localStorage.setItem('queue-list', $('#queue').html());

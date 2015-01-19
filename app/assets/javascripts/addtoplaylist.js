@@ -7,7 +7,7 @@ jQuery(document).ready( function ($) {
     $playlistPopup = $(this).parents('.search-result-container').find('.playlists-popup');
     // $playlistPopup.css('left', event.pageX); //WHY NOT WORKING
     // $playlistPopup.css('top', event.pageY);
-    $playlistPopup.css('display','block'); 
+    $playlistPopup.css('display','block');
     $playlistPopup.css("position", "absolute");
     // $playlistPopup.css( {display: "block", position:"absolute", top:event.pageY, left: event.pageX})
   });
@@ -20,8 +20,6 @@ jQuery(document).ready( function ($) {
 		var videoId = $this.closest('.search-result-container').find('.title-and-thumbnail').data().video_id;
 		var duration = $this.parent().prev('.result-icons').find('.add-to-playlist').data().duration;
 		console.log(duration);
-		var likeCount;
-
 
 		$.ajax({
 			type: "POST",
@@ -36,9 +34,9 @@ jQuery(document).ready( function ($) {
 			},
 			success: function(data) {
 				console.log(data);
-				$this.css('background-color', "gray")
-				$this.text('Added to playlist')
-				$('.playlists-popup').fadeOut(1500)
+				$this.css('background-color', "gray");
+				$this.text('Added to playlist');
+				$('.playlists-popup').fadeOut(1500);
 				// alert("Track has been successfully added to playlist")
 			}
 		})
@@ -60,7 +58,7 @@ jQuery(document).ready( function ($) {
 	// 	    url: "/tracks",
 	// 	    // dataType: 'json', // don't know wtf this is doing but it broke the success call
 	// 	    data: {
-	// 	      track: { 
+	// 	      track: {
 	// 	        playlists: starredPlaylist,
 	// 	        title: videoTitle,
 	// 	        video_id: videoId
@@ -97,4 +95,3 @@ jQuery(document).ready( function ($) {
 	// 		}
 	// });
 // });
-
