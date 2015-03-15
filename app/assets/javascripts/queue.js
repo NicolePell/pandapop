@@ -8,13 +8,11 @@ jQuery(document).ready(function ($) {
 
   $queue.on('trackAdded', function() {
     localStorage.setItem('queue-list', $(this).html());
-    console.log('track added')
     $queue.scrollTop($queue.height());
   });
 
   $('#results').on('click', '.add-to-queue', function(event){
     event.preventDefault();
-    console.log('ADD TO QUEUE')
     $queue.append('<article class="queue-item" data-id="' + $(this).data('id') + '" data-duration="' + $(this).data('duration') + '">' + '<div class="queue-item-title">' + $(this).data('title')+ '</div><div class="queue-item-icons"><img class="star-icon" src="/images/star.png"><img class="delete-from-queue" src="/images/cross.png"></div></article>')
     $queue.trigger('trackAdded')
   });
@@ -35,7 +33,6 @@ jQuery(document).ready(function ($) {
 
   $(document).on('click', '.delete-from-queue' , function() {
     $(this).parents('.queue-item').remove();
-    // localStorage.setItem('queue-list', $queue.html());
   });
 
   $('.queue-item-title').on('click', function() {
@@ -53,7 +50,7 @@ jQuery(document).ready(function ($) {
     var secondyoutubeVideoId =  $("#queue article:nth-child(2)").data('id')
     var secondyoutubeVideoTitle = $("#queue article:nth-child(2)").find('.queue-item-title').text()
 
-    $('#player-iframe').attr('src', 'https://youtube.com/embed/' + secondyoutubeVideoId + '?autoplay=1')  
+    $('#player-iframe').attr('src', 'https://youtube.com/embed/' + secondyoutubeVideoId + '?autoplay=1')
 
     $('#current-player-title').text(secondyoutubeVideoTitle)
 

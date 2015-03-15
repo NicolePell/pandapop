@@ -24,6 +24,7 @@
 
   (function($) {
     $(document).ready(function() {
+      
       $.slidebars();
       $('#track-title p').succinct({
             size: 10

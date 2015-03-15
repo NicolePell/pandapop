@@ -1,5 +1,5 @@
 <article class="pink-ribbon">
-<h1 class="playlists-header"><%= @user.username %>'s playlists</h1>
+  <h1 class="playlists-header"><%= @user.username %>'s playlists</h1>
 </article>
 
 <article id="iframe-container">
@@ -23,8 +23,8 @@
       <p class="track-title-value">Title</p>
       <p>Duration</p>
     </article>
-  	<article id="playlist-tracks-container">
-  	</article>
+    <article id="playlist-tracks-container">
+    </article>
 
   </section>
 
@@ -33,12 +33,12 @@
 
 
 <template id="trackTemplate">
-	  <article id="track-title" data-duration="{{trackduration}}" data-videoId="{{videoid}}">
-  		<img src="/images/plus.png" class="plus-icon"/>
-  		<p class="track-title-value">{{tracktitle}}</p>
-  		<p>{{trackduration}}</p>
-  		<img src="/images/cross.png" class="cross-icon"/>
-  	</article>
+    <article id="track-title" data-duration="{{trackduration}}" data-videoId="{{videoid}}">
+      <img src="/images/plus.png" class="plus-icon"/>
+      <p class="track-title-value">{{tracktitle}}</p>
+      <p>{{trackduration}}</p>
+      <img src="/images/cross.png" class="cross-icon"/>
+    </article>
 </template>
 
 <%= render "static_pages/queue"%>
